@@ -1,0 +1,2 @@
+call printf "%s\n" "Hello, world!"
+

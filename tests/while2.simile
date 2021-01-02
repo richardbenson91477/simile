@@ -1,0 +1,19 @@
+def main
+    set i 10
+    while i
+        set a i
+        addto a 64
+        call putchar a
+        call putchar ' '
+        set j 10
+        while j
+            set a j
+            addto a 64
+            call putchar a
+            subfrom j 1
+        wend
+        call putchar '\n'
+        subfrom i 1
+    wend
+    call putchar '\n'
+end

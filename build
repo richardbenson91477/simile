@@ -1,0 +1,48 @@
+#!/bin/sh
+
+export ASFLAGS="-no-pie"
+
+if [ -e ./simile ]; then
+    cmd=./simile
+elif [ -e ../simile ]; then
+    cmd=../simile 
+else
+    cmd=simile
+fi
+echo cmd is "$cmd"
+
+if [ x"$1" = x"" ]; then
+    similes=*.simile
+else
+    similes="$@"
+fi
+
+for fn in $similes; do
+    if ! [ -e $fn ]; then
+        echo "$fn doesn't exist?"
+        continue; fi
+
+    bn=$(basename "$fn" .simile)
+    an="$bn"".s"
+
+    if [ -e "$bn" ] && [ "$bn" -nt "$cmd" ] && [ "$bn" -nt "$fn" ]; then
+        continue; fi
+
+    echo building "$fn"
+    if "$cmd" < "$fn" > output.tmp; then
+        mv output.tmp "$an"
+
+        if ! make "$bn"; then
+            continue; fi
+
+        if [ -e "$an".expected ]; then
+            diff "$an" "$an".expected
+        fi
+    else
+        cat output.tmp
+        rm output.tmp
+    fi
+done
+
+echo build completed
+

@@ -1,0 +1,14 @@
+def main
+    call test 20
+end
+
+def test x
+    # crashes when x is a register reference
+    # call printf "%d\n" x
+
+    set a x
+    call printf "%d\n" a
+
+    ret
+end
+

@@ -1,0 +1,8 @@
+def main
+    set a 1
+    addto a 9
+    subfrom a 5
+    multo a 4
+    divfrom a 2
+    call printf "%d\n" a
+end

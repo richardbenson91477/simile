@@ -1,0 +1,12 @@
+
+def main
+    call my_add 10 20
+    res a
+    call printf "%ld\n" a
+end
+
+def my_add x y
+    add x
+    add y
+end
+

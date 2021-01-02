@@ -1,0 +1,20 @@
+def main
+    set x 0
+    set y 1
+    set z 1
+    if x
+        call puts "x is nonzero"
+        if y
+            call puts "y is nonzero"
+        else
+            call puts "y is zero"
+        endif
+    else
+        call puts "x is zero"
+        if z
+            call puts "z is nonzero"
+        else
+            call puts "z is zero"
+        endif
+    endif
+end

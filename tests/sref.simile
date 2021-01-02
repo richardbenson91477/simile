@@ -1,0 +1,7 @@
+def main
+    set s "Hello, \"world!\""
+    addto s 1
+    # should print 'ello, "world!"'
+    call printf "%s\n" s
+end
+

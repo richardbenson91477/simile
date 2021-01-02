@@ -1,0 +1,10 @@
+def main
+    set c 'a'
+    set x 26
+    while x
+        call putchar c
+        addto c 1
+        subfrom x 1
+    wend
+    call putchar '\n'
+end

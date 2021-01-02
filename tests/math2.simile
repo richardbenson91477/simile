@@ -1,0 +1,9 @@
+def main
+    add 9
+    add 1
+    sub 5
+    mul 4
+    div 2
+    res a
+    call printf "%d\n" a
+end

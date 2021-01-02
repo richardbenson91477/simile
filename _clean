@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for fn in *.simile; do
+    bn=$(basename "$fn" .simile)
+    echo removing "$bn" "$bn".o "$bn".s
+    rm -f "$bn" "$bn".o "$bn".s
+done
+echo clean complete
