@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 ''' simile compiler ''' 
-''' by Richard A. Benson <richardbenson91477@gmail.com> '''
+''' by Richard A. Benson <richardbenson91477@protonmail.com> '''
 import sys, os
 import emit, out, util, fn, enums as e
 
