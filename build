@@ -11,7 +11,7 @@ else
 fi
 echo cmd is "$cmd"
 
-if [ x"$1" = x"" ]; then
+if [ -z "$1" ]; then
     similes=*.simile
 else
     similes="$@"
